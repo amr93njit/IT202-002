@@ -10,7 +10,7 @@ function getTotal($arr) {
     for ($i=0; $i<count($arr); $i++)
         $total+=$arr[$i];
     //TODO do rounding stuff here
-    $total = round($total,2);
+    $total = number_format(round($total,2),2);
     echo "The total is " . var_export($total, true);
 }
 echo "Problem 2: Adding Floats<br>";
