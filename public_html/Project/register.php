@@ -1,7 +1,6 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 ?>
-
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email</label>
@@ -21,44 +20,49 @@ require(__DIR__ . "/../../partials/nav.php");
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-        
+
         return true;
     }
 </script>
 <?php
- //TODO 2: add PHP Code
+//TODO 2: add PHP Code
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])) {
-    //get the email key from $_POST, default to "" if not set, and return the value
     $email = se($_POST, "email", "", false);
-    //same as above but for password and confirm
     $password = se($_POST, "password", "", false);
-    $confirm = se($_POST, "confirm", "", false);
-    //TODO 3 :validate/use
+    $confirm = se(
+        $_POST,
+        "confirm",
+        "",
+        false
+    );
+    //TODO 3
     $hasError = false;
     if (empty($email)) {
         echo "Email must not be empty";
         $hasError = true;
     }
     //sanitize
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $email = sanitize_email($email);
     //validate
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!is_valid_email($email)) {
         echo "Invalid email address";
         $hasError = true;
     }
     if (empty($password)) {
-        echo "Password` must not be empty";
+        echo "password must not be empty";
         $hasError = true;
     }
     if (empty($confirm)) {
-        echo "Confirm must not be empty";
+        echo "Confirm password must not be empty";
         $hasError = true;
     }
     if (strlen($password) < 8) {
         echo "Password too short";
         $hasError = true;
     }
-    if (strlen($password) > 0 && $password !== $confirm) {
+    if (
+        strlen($password) > 0 && $password !== $confirm
+    ) {
         echo "Passwords must match";
         $hasError = true;
     }
@@ -73,7 +77,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
             echo "Successfully registered!";
         } catch (Exception $e) {
             echo "There was a problem registering";
-            echo "<pre>" . var_export($e, true) . "</pre>";
+            "<pre>" . var_export($e, true) . "</pre>";
         }
     }
 }
