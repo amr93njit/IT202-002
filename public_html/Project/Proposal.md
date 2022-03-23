@@ -3,7 +3,7 @@
 ## Github Link: (Prod Branch of Project Folder)
 ## Project Board Link: 
 ## Website Link: https://amr93-prod.herokuapp.com/Project
-## Your Name:
+## Your Name: Adam Ramsey
 
 <!-- Line item / Feature template (use this for each bullet point) -- DO NOT DELETE THIS SECTION
 
