@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body onload = "init();">
+	<main>
+		<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+		</canvas>
+	</main>
+	</body>
+<style>
+#canvas {
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+}
+</style>
 	<script>
 		// Collect The Square game
 
@@ -111,7 +124,7 @@
 		// Start the game
 		function startGame() {
 			/* amr93 | 3/27/2022
-			   Increase the timer every second */
+			   Increase the timer every second. Flag adjusted here to allow later statements to occur only once. */
 			id = setInterval(function() {
 				timer++;
 				flag=1;
@@ -125,7 +138,6 @@
 			draw();
 		}
 
-		
 		// Show the game over screen
 		function endGame() {
 			// Stop the timer
@@ -238,7 +250,7 @@
 			context.fillStyle = '#FF0000';
 			context.fillRect(enemyX, enemyY, enemyLength, enemyLength);
 
-			// Draw the score and time remaining
+			// Draw the score
 			context.fillStyle = '#000000';
 			context.font = '24px Arial';
 			context.textAlign = 'left';
@@ -250,6 +262,8 @@
 			context.fillText('Time Elapsed: ' + timer, 10, 78);
 
 			// End the game or keep playing
+			/* amr93 | 3/27/2022
+			   Win condition is adjusted to be based on lives, not the time countdown. */
 			if (lives <= 0) {
 				endGame();
 			} else {
@@ -261,11 +275,5 @@
 		menu();
 		canvas.focus();
 	</script>
-	#canvas {
-	width: 600px;
-	height: 400px;
-	border: 1px solid black;
-  }
 </head>
-<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
 </html>
