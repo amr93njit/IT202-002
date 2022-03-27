@@ -239,14 +239,18 @@
 			}
 			
 			// Draw the square
-			context.fillStyle = '#0000FF';
+			/*amr93 | 3/27/2022. 
+			  Player square recolored to blue to make it easier to tell
+			   which square is bad (red), which is good (green), and which is neutral (blue). */
+			context.fillStyle = '#0000FF'; 
 			context.fillRect(x, y, sideLength, sideLength);
+			
 			// Draw the target 
 			context.fillStyle = '#00FF00';
 			context.fillRect(targetX, targetY, targetLength, targetLength);
 
 			/* amr93 | 3/27/2022
-			   Draw the enemy */
+			   Draw the enemy square */
 			context.fillStyle = '#FF0000';
 			context.fillRect(enemyX, enemyY, enemyLength, enemyLength);
 
