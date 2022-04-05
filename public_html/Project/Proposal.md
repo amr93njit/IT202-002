@@ -17,24 +17,34 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-    - [ ] \(mm/dd/yyyy of completion) User will be able to register a new account
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User will be able to logout
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Basic security rules implemented
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Basic Roles implemented
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Any output messages/errors should be “user friendly”
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User will be able to see their profile
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User will be able to edit their profile
-        -  Link to related .md file: [Link Name](link url)
+    - [x] \(02/23/2022) User will be able to register a new account
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/register.php](https://amr93-prod.herokuapp.com/Project/register.php)
+    - [x] \(02/23/2022) User will be able to login to their account (given they enter the correct credentials)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/login.php](https://amr93-prod.herokuapp.com/Project/loign.php)
+    - [x] \(02/23/2022) User will be able to logout
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/logout.php](https://amr93-prod.herokuapp.com/Project/logout.php)
+    - [x] \(03/02/2022) Basic security rules implemented
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
+    - [x] \(03/30/2022) Basic Roles implemented
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/admin/create_role.php](https://amr93-prod.herokuapp.com/Project/admin/create_role.php)
+    - [x] \(03/22/2022) Site should have basic styles/theme applied; everything should be styled
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+        - [https://amr93-prod.herokuapp.com/Project/styles.css](https://amr93-prod.herokuapp.com/Project/styles.css)
+    - [x] \(03/22/2022) Any output messages/errors should be “user friendly”
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/logout.php](https://amr93-prod.herokuapp.com/Project/logout.php)
+    - [x] \(03/02/2022) User will be able to see their profile
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
+    - [x] \(03/02/2022) User will be able to edit their profile
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
 - Milestone 2
   - (duplicate template here for Milestone 1 features)
 - Milestone 3
