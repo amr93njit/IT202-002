@@ -22,7 +22,7 @@
         - [https://amr93-prod.herokuapp.com/Project/register.php](https://amr93-prod.herokuapp.com/Project/register.php)
     - [x] \(02/23/2022) User will be able to login to their account (given they enter the correct credentials)
         - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
-        - [https://amr93-prod.herokuapp.com/Project/login.php](https://amr93-prod.herokuapp.com/Project/loign.php)
+        - [https://amr93-prod.herokuapp.com/Project/login.php](https://amr93-prod.herokuapp.com/Project/login.php)
     - [x] \(02/23/2022) User will be able to logout
         - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
         - [https://amr93-prod.herokuapp.com/Project/logout.php](https://amr93-prod.herokuapp.com/Project/logout.php)
