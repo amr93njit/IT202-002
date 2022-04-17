@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+require(__DIR__ . "/../../partials/nav.php");
+?>
 <html>
 <head>
 <body onload = "init();">
@@ -85,20 +87,20 @@
 
 		// Listen for keyup events
 		canvas.addEventListener('keyup', function(event) {
-		event.preventDefault();
-		console.log(event.key, event.keyCode);
-		if (event.keyCode === 40) { // DOWN
-			down = false;
-		}
-		if (event.keyCode === 38) { // UP
-			up = false;
-		}
-		if (event.keyCode === 37) { // LEFT
-			left = false;
-		}
-		if (event.keyCode === 39) { // RIGHT
-			right = false;
-		}
+			event.preventDefault();
+			console.log(event.key, event.keyCode);
+			if (event.keyCode === 40) { // DOWN
+				down = false;
+			}
+			if (event.keyCode === 38) { // UP
+				up = false;
+			}
+			if (event.keyCode === 37) { // LEFT
+				left = false;
+			}
+			if (event.keyCode === 39) { // RIGHT
+				right = false;
+			}
 		});
 
 		// Show the start menu
@@ -139,7 +141,6 @@
 			draw();
 		}
 
-		
 		// Show the game over screen
 		function endGame() {
 			// Stop the timer
@@ -150,23 +151,31 @@
 			context.font = '24px Arial';
 			context.textAlign = 'center';
 			/* amr93 | 3/27/2022
-			   Adjusting game over screen to include "time elapsed" with score*/
+			   Adjusting game over screen to include "time elapsed" with score */
 			context.fillText('Final Score: ' + score, canvas.width / 2, (canvas.height / 2) -15);
 			context.fillText('Time Elapsed (s): ' + timer, canvas.width / 2, (canvas.height / 2) +15);
+			
+			/* amr93 | 4/16/2022 
+			   Upon game completion, add scores to scores table. */
+			postData({
+				score: score,
+			}, "/Project/api/save_score.php").then(data => {
+				console.log(data);
+				//quick, brief example (you wouldn't want to use alert)
+				if (data.status === 200) {
+					//saved successfully
+					alert(data.message);
+				} else {
+					//some error occurred, maybe want to handle it before resetting
+					alert(data.message);
+				}
+			})
 		}
 
 		// Move the target square to a random position
 		function moveTarget() {
 			targetX = Math.round(Math.random() * canvas.width - targetLength);
 			targetY = Math.round(Math.random() * canvas.height - targetLength);
-			/* amr93 | 3/27/2022
-			   Move enemy target as well.
-			enemyX = Math.round(Math.random() * canvas.width - enemyLength);
-			enemyY = Math.round(Math.random() * canvas.height - enemyLength);
-			/* amr93 | 3/27/2022
-			   Semi prevent squares from spawning overlapped
-			if (enemyX == targetX && enemyY == targetY)
-				moveTarget(); */
 		}
 		function moveEnemy() {
 			enemyX = Math.round(Math.random() * canvas.width - enemyLength);
@@ -226,7 +235,6 @@
 				//Move square
 					moveTarget();
 					moveEnemy(); //
-					
 				// Remove a life
 					lives--; 
 				}
@@ -274,6 +282,8 @@
 			context.fillText('Time Elapsed: ' + timer, 10, 78);
 
 			// End the game or keep playing
+			/*amr93 | 3/27/2022
+			  Changed game condition to be based on lives.*/
 			if (lives <= 0) {
 				endGame();
 			} else {
@@ -284,6 +294,30 @@
 		// Start the game
 		menu();
 		canvas.focus();
+
+		/* amr93 | 4/16/2022
+		   Function for sending scores to table. */
+		async function postData(data = {}, url = "/Project/api/save_score.php") {
+			console.log(Object.keys(data).map(function(key) {
+				return "" + key + "=" + data[key]; // line break for wrapping only
+			}).join("&"));
+			const response = await fetch(url, {
+				method: 'POST', // *GET, POST, PUT, DELETE, etc.
+				mode: 'cors', // no-cors, *cors, same-origin
+				cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+				credentials: 'same-origin', // include, *same-origin, omit
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				redirect: 'follow', // manual, *follow, error
+				referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+				body: Object.keys(data).map(function(key) {
+					return "" + key + "=" + data[key]; // line break for wrapping only
+				}).join("&") //JSON.stringify(data) // body data type must match "Content-Type" header
+			});
+			return response.json(); // parses JSON response into native JavaScript objects
+		}
 	</script>
 </head>
 </html>
+
