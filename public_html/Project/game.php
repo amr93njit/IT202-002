@@ -1,5 +1,6 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__ . "/../../partials/flash.php");
 ?>
 <html>
 <head>
@@ -164,7 +165,7 @@ require(__DIR__ . "/../../partials/nav.php");
 				//quick, brief example (you wouldn't want to use alert)
 				if (data.status === 200) {
 					//saved successfully
-					alert(data.message);
+					flash(data.message);
 				} else {
 					//some error occurred, maybe want to handle it before resetting
 					alert(data.message);
@@ -320,4 +321,3 @@ require(__DIR__ . "/../../partials/nav.php");
 	</script>
 </head>
 </html>
-
