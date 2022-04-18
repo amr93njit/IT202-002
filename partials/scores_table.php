@@ -38,10 +38,10 @@ switch ($duration) {
     <div class="card-text">
             <table class="table border-secondary mb-3">
                 <?php if (count($results) == 0) : ?>
-                    <h4 class="card-header mb-3" style="background-color:649b8e;" > <?php se($title); ?> </h4>
+                    <h4 class="card-header mb-3" style="background-color:#319e9e;" > <?php se($title); ?> </h4>
                     <p>No results to show</p> 
                 <?php else : ?>
-                    <h4 class="card-header mb-3" style="background-color:649b8e;"> <?php se($title); ?> </h4>
+                    <h4 class="card-header mb-3" style="background-color:#319e9e;"> <?php se($title); ?> </h4>
                     <?php foreach ($results as $index => $record) : ?>
                         <?php if ($index == 0) : ?>
                             <thead>
