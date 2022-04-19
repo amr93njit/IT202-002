@@ -22,7 +22,7 @@
         - [https://amr93-prod.herokuapp.com/Project/register.php](https://amr93-prod.herokuapp.com/Project/register.php)
     - [x] \(02/23/2022) User will be able to login to their account (given they enter the correct credentials)
         - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
-        - [https://amr93-prod.herokuapp.com/Project/login.php](https://amr93-prod.herokuapp.com/Project/loign.php)
+        - [https://amr93-prod.herokuapp.com/Project/login.php](https://amr93-prod.herokuapp.com/Project/login.php)
     - [x] \(02/23/2022) User will be able to logout
         - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
         - [https://amr93-prod.herokuapp.com/Project/logout.php](https://amr93-prod.herokuapp.com/Project/logout.php)
@@ -46,7 +46,22 @@
         - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone1/public_html/Project/milestone1.md)
         - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
 - Milestone 2
-  - (duplicate template here for Milestone 1 features)
+    - [x] (04/16/2022) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class for the HTML5 HW) 
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/game.php](https://amr93-prod.herokuapp.com/Project/game.php)
+    - [x] (04/17/2022) The system will save the user’s score at the end of the game only if the user is logged in
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/game.php](https://amr93-prod.herokuapp.com/Project/game.php)
+    - [x] (04/18/2022) The user will be able to see their last 10 scores
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
+    - [x] (04/18/2022) Create function(s) that output the following scoreboards
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (04/18/2022) Create a Homepage (index.php)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+
 - Milestone 3
   - (duplicate template here for Milestone 1 features)
 - Milestone 4
