@@ -4,10 +4,10 @@ require(__DIR__ . "/../../partials/nav.php");
 <div class="container-fluid">
     <!-- <h1>Home</h1> -->
     <p> </p>
-    <h1> <strong> Collect the Green Square  </strong> </h1>
+    <h1> <strong> Collect the Square  </strong> </h1>
     <h4> Controls: Arrow Keys <h4>
     <p> </p>
-    <h4> Player controls a blue square with the objective of collecting green squares. </h4>
+    <h4> The player controls a blue square with the objective of collecting green squares. </h4>
     <h4> Points are earned when hitting green squares and lives are deducted by hitting red squares. </h4>
     <h4> The size of the red square increases every ten seconds and the game ends when you run out of lives.</h4>
     <p> </p>

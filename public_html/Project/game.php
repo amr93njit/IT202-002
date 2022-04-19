@@ -168,7 +168,7 @@ require(__DIR__ . "/../../partials/flash.php");
 					flash(data.message);
 				} else {
 					//some error occurred, maybe want to handle it before resetting
-					alert(data.message);
+					flash(data.message);
 				}
 			})
 		}
