@@ -105,7 +105,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add screenshots showing which issues are done/closed (project board) Incomplete Issues should not be closed (Milestone2 issues)</td></tr>
 <tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/98342831/163829507-c38eb5b5-6add-4a83-b632-9b2dfebecaf3.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>4/5 issues being completed and marked accordingly. The game issue is in progress<br>as it is not completely finished but sufficient enough for the assignment.<br></p>
+<tr><td> <em>Caption:</em> <p>5/5 issues being completed and marked accordingly.</p>
 </td></tr>
 </table></td></tr>
 </table></td></tr>
