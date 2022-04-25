@@ -46,3 +46,10 @@ function get_user_id()
     }
     return false;
 }
+function get_credits() 
+{
+    if (is_logged_in()) {
+        return se($_SESSION["user"], "credits", 0, false);
+    }
+    return 0;
+}

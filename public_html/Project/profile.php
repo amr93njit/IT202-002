@@ -58,7 +58,7 @@ if (isset($_POST["save"])) {
         }
         if (!$hasError) {
             if ($new_password === $confirm_password) {
-                //TODO validate current
+                //validate current
                 $stmt = $db->prepare("SELECT password from Users where id = :id");
                 try {
                     $stmt->execute([":id" => get_user_id()]);
@@ -94,6 +94,9 @@ $username = get_username();
 ?>
 <div class="container-fluid">
     <h1>Profile</h1>
+    <div> 
+        <h5> Credits: <?php echo get_credits(); ?> </h5>
+    </div>
     <div>
         <h5> Best Score: <?php echo get_best_score(get_user_id()); ?> </h5>
     </div>
@@ -135,7 +138,7 @@ $username = get_username();
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
         let isValid = true;
-        //TODO add other client side validation....
+        //client side validation....
         let isValid = true;
         if (!isValidPassword(password)){
             flash("Password too short", "danger");
