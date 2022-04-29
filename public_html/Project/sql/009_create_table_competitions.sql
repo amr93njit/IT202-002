@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS Comps 
+CREATE TABLE IF NOT EXISTS Competitionss 
 (
 	`id` int AUTO_INCREMENT PRIMARY KEY,
     `name` varchar(240) not null,
@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS Comps
 	`paid_out` boolean DEFAULT false,
 	`did_calc` boolean DEFAULT false,
 	`min_score` int DEFAULT 1,
-    `first_place_per` int DEFAULT 70,
-	`second_place_per` int DEFAULT 20,
+    `first_place_per` int DEFAULT 60,
+	`second_place_per` int DEFAULT 30,
 	`third_place_per` int DEFAULT 10,
 	`cost_to_create` int DEFAULT 0,
     `created_by` int,
