@@ -42,7 +42,7 @@ session_start();
                     <li class="nav-item"><a class="nav-link text-primary" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
                 <?php endif; ?>
                 <?php if (!is_logged_in()) : ?>
-                    <li class="nav-item"><a class="nav-link text-primary" href="<?php echo get_url('login.php'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link text-primary" href="<?php echo get_url('login.php');  ?>">Login</a></li>
                     <li class="nav-item"><a class="nav-link text-primary" href="<?php echo get_url('register.php'); ?>">Register</a></li>
                 <?php endif; ?>
                 <?php if (has_role("Admin")) : ?>
@@ -50,10 +50,11 @@ session_start();
                         <a class="nav-link dropdown-toggle text-primary" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin Roles
                         </a>
-                        <ul class="dropdown-menu bg-warning" aria-labelledby="rolesDropdown">
+                        <ul class="dropdown-menu bg-light" aria-labelledby="rolesDropdown">
                             <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/create_role.php'); ?>">Create</a></li>
                             <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/list_roles.php'); ?>">List</a></li>
                             <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign</a></li>
+
                         </ul>
                     </li>
                 <?php endif; ?>
