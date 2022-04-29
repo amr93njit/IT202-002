@@ -137,7 +137,6 @@ $username = get_username();
     function validate(form) {
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
-        let isValid = true;
         //client side validation....
         let isValid = true;
         if (!isValidPassword(password)){
