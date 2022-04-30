@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Adds credits to a users account. Function should be for negative numbers.
+ * Adds credits to a users account. Function should be for positive numbers.
  */
 function give_credits($userid, $credits, $reason)
 {
