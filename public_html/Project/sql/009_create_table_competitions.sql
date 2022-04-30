@@ -1,8 +1,8 @@
-CREATE TABLE IF NOT EXISTS Competitionss 
+CREATE TABLE IF NOT EXISTS Competitions 
 (
 	`id` int AUTO_INCREMENT PRIMARY KEY,
     `name` varchar(240) not null,
-	`duration` int DEFAULT 3,
+	`duration` int DEFAULT 1,
 	`expires` TIMESTAMP DEFAULT (DATE_ADD(CURRENT_TIMESTAMP, INTERVAL `duration` DAY)),
     `current_reward` int DEFAULT (`starting_reward`),
 	`starting_reward` int DEFAULT 1,
@@ -16,10 +16,10 @@ CREATE TABLE IF NOT EXISTS Competitionss
 	`second_place_per` int DEFAULT 30,
 	`third_place_per` int DEFAULT 10,
 	`cost_to_create` int DEFAULT 0,
-    `created_by` int,
+    `created_by` int,  
     `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `modified` TIMESTAMP DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-    FOREIGN KEY (`id`) REFERENCES Users(`id`),
+	FOREIGN KEY (`created_by`) REFERENCES Users(`id`),
     check (`min_score` >= 1),
     check (`starting_reward` >= 1),
     check (`current_reward` >= `starting_reward`),
