@@ -1,17 +1,15 @@
 <?php
 
 /**
- * Points should be passed as a positive value.
- * $losing should be where the points are coming from
- * $gaining should be where the points are going
+ * Adds credits to a users account. Function should be for positive numbers.
  */
 function give_credits($userid, $credits, $reason)
 {
-    if ($credits > 0) {
+    if ($credits != 0) {
         //update CreditsHistory
         $query = "INSERT INTO CreditsHistory (user_id, credit_diff, reason) VALUES (:u, :c, :r)";
         $params[":u"] = $userid;
-        $params[":c"] = ($credits);
+        $params[":c"] = $credits;
         $params[":r"] = $reason;
         
         $db = getDB();
@@ -37,8 +35,15 @@ function give_credits($userid, $credits, $reason)
             return false;
         }
     }
+    flash("Error giving/deducting credits", "danger");
     return false;
 }
+/**  Removes credits from a user's account. Function should be for negative numbers.*/
+function deduct_credits($userid, $credits, $reason) 
+{ 
+    give_credits($userid, $credits*-1, $reason); 
+}
+/** Displays credits from a user's account. */
 function get_credits($userid)
 {
     $query = "SELECT credits FROM Users WHERE id = :user_id";
