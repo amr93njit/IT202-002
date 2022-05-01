@@ -63,15 +63,33 @@
         - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
 
 - Milestone 3
-    - [ ] (dd/mm/yyyy) Users will have credits associated with their account.
-    - [ ] (dd/mm/yyyy) Create a CreditsHistory table (id, user_id, credit_diff, reason, created)
-    - [ ] (dd/mm/yyyy) Competitions table should have the following columns (id, name, duration, expires (value = now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean default false), did_calc (boolean default false), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created_by (user_id ref), created, modified)
-    - [ ] (dd/mm/yyyy) User will be able to create a competition
-    - [ ] (dd/mm/yyyy) Each new participant causes the Reward value to increase by 50% of the joining fee rounded up (i.e., at least 1)
-    - [ ] (dd/mm/yyyy) Have a page where the User can see active competitions (not expired)
-    - [ ] (dd/mm/yyyy) Will need an association table CompetitionParticipants (id, comp_id, user_id, created, modified)
-    - [ ] (dd/mm/yyyy) User can join active competitions 
-    - [ ] (dd/mm/yyyy) Create function that calculates competition winners (clearly comment each step in the code)
+    - [x] (dd/mm/yyyy) Users will have credits associated with their account.
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Create a CreditsHistory table (id, user_id, credit_diff, reason, created)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Competitions table should have the following columns (id, name, duration, expires (value = now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean default false), did_calc (boolean default false), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created_by (user_id ref), created, modified)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) User will be able to create a competition
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Each new participant causes the Reward value to increase by 50% of the joining fee rounded up (i.e., at least 1)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Have a page where the User can see active competitions (not expired)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Will need an association table CompetitionParticipants (id, comp_id, user_id, created, modified)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) User can join active competitions 
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
+    - [x] (dd/mm/yyyy) Create function that calculates competition winners (clearly comment each step in the code)
+        - [Milestone1](https://github.com/amr93njit/IT202-002/blob/Milestone2/public_html/Project/milestone2.md)
+        - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/admin/admin_calc.php)
     
 - Milestone 4
   - (duplicate template here for Milestone 1 features) 
