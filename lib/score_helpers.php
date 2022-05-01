@@ -5,15 +5,20 @@
 function get_top_scores_for_comp($comp_id, $limit=10)
 {
     $db = getDB();
-    #select entire scores table (score, user_id, time created) and use DENSE_RANK() to partition scores data into "ranks" and order by descending order.
-    #ranks identify the placement of the user, that is a user with the highest score has a rank of 1
+    /* amr93 | 5/1/2022 
+        select entire scores table (score, user_id, time created) and use DENSE_RANK() to partition scores data into "ranks" and order by descending order.
+        ranks identify the placement of the user, that is a user with the highest score has a rank of 1
+
+        add data from other related competition tables
+
+        count only scores made during the users time since joining competition: do not carry in scores. 
+
+        sort by rank, as in that user's best score for the competition, where rank begins at 1 and scores that exceed the min_score
+    */
     $query = "SELECT * FROM (SELECT s.score, s.user_id, s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s
-    #add data from other related competition tables.
     JOIN CompetitionParticipants cp ON cp.user_id = s.user_id
     JOIN Competitions c ON cp.comp_id = c.id AND min_score
-    #count only scores made during the users time since joining competition: do not carry in scores. al
     WHERE c.id = :cid AND s.score > c.min_score AND s.created BETWEEN cp.created AND c.expires
-    #sort by rank descending, where rank begins at 1 and scores that exceed the min_score
     ) AS t WHERE `rank` = 1 ORDER BY score DESC LIMIT :limit";
     $stmt = $db->prepare($query);
     $scores = [];
