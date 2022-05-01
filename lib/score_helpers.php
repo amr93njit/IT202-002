@@ -1,4 +1,42 @@
 <?php
+/**  Calculates and shows top scores for a competition
+ * A user can only get one placement in the competition
+ */
+function get_top_scores_for_comp($comp_id, $limit=10)
+{
+    $db = getDB();
+    /* amr93 | 5/1/2022 
+        select entire scores table (score, user_id, time created) and use DENSE_RANK() to partition scores data into "ranks" and order by descending order.
+        ranks identify the placement of the user, that is a user with the highest score has a rank of 1
+
+        add data from other related competition tables
+
+        count only scores made during the users time since joining competition: do not carry in scores. 
+
+        sort by rank, as in that user's best score for the competition, where rank begins at 1 and scores that exceed the min_score
+    */
+    $query = "SELECT * FROM (SELECT s.score, s.user_id, s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s
+    JOIN CompetitionParticipants cp ON cp.user_id = s.user_id
+    JOIN Competitions c ON cp.comp_id = c.id AND min_score
+    WHERE c.id = :cid AND s.score > c.min_score AND s.created BETWEEN cp.created AND c.expires
+    ) AS t WHERE `rank` = 1 ORDER BY score DESC LIMIT :limit";
+    $stmt = $db->prepare($query);
+    $scores = [];
+    try {
+        $stmt->bindValue(":cid", $comp_id, PDO::PARAM_INT);
+        $stmt->bindValue(":limit", $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $scores = $r;
+        }
+    } catch (PDOException $e) {
+        flash("There was a problem fetching scores, please try again later", "danger");
+        error_log("List competition scores error: " . var_export($e, true));
+        return false;
+    }
+    return $scores;
+}
 
 /* Gets the top 10 scores for valid durations (day, week, month, lifetime) */
 function get_top_10($duration = "day")
