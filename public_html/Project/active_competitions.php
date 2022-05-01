@@ -53,7 +53,7 @@ try {
 							<tr>
 								<td><?php se($row, "name"); ?></td>
 								<td><?php se($row, "expires"); ?></td>
-								<td> Payout: <?php se($row, "current_reward", "-"); ?></td>
+								<td><?php se($row, "current_reward"); ?><br>Payout: <?php se($row, "first_place_per", "-"); echo "-"; se($row, "second_place_per", "-"); echo "-"; se($row, "third_place_per", "-") ?></td>
 								<td><?php se($row, "current_participants"); ?>/<?php se($row, "min_participants"); ?></td>
 								<td><?php se($row, "min_score"); ?></td>
 								<td>
