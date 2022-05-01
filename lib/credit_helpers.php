@@ -35,8 +35,6 @@ function give_credits($userid, $credits, $reason)
             return false;
         }
     }
-    flash("Error giving/deducting credits", "danger");
-    return false;
 }
 /**  Removes credits from a user's account. Function should be for negative numbers.*/
 function deduct_credits($userid, $credits, $reason) 
