@@ -82,5 +82,6 @@ function join_competition($user_id, $comp_id, $cost)
 		flash("Error: Competition has already expired or paid out.", "danger");
 		return false; 
 	}
+	flash("Successfully entered competition", "success");
 }
 ?>
