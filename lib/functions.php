@@ -30,4 +30,7 @@ require(__DIR__ . "/score_helpers.php");
 
 //credits
 require(__DIR__ . "/credit_helpers.php");
+
+//competitions
+require(__DIR__ . "/competition_helpers.php");
 ?>

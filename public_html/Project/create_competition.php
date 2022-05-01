@@ -78,7 +78,7 @@ if (isset($_POST["name"])) {
             $comp_id = (int)$db->lastInsertId();
             if ($comp_id > 0) {
                 deduct_credits(get_user_id(), $cost, "Created Competition");
-                #join_competition($comp_id)); 
+                join_competition(get_user_id(), $comp_id, $cost); 
                 flash("Successfully created Competition: $name", "success");
             }
         } catch (PDOException $e) {
