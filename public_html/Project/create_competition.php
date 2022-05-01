@@ -79,7 +79,7 @@ if (isset($_POST["name"])) {
             if ($comp_id > 0) {
                 deduct_credits(get_user_id(), $cost, "Created Competition");
                 join_competition(get_user_id(), $comp_id, $cost); 
-                flash("Successfully created Competition: $name", "success");
+                flash("Successfully created competition", "success");
             }
         } catch (PDOException $e) {
             error_log("Error creating competition: " . var_export($e->errorInfo, true));
