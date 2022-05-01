@@ -58,4 +58,5 @@ switch ($duration) {
                     <?php endforeach; ?>
             </table>        
         <?php endif; ?>
+    </div>
 </div>

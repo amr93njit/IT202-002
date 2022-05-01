@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Competitions
 	`expires` TIMESTAMP DEFAULT (DATE_ADD(CURRENT_TIMESTAMP, INTERVAL `duration` DAY)),
     `current_reward` int DEFAULT (`starting_reward`),
 	`starting_reward` int DEFAULT 1,
-	`join_fee` int DEFAULT 1,
+	`join_fee` int DEFAULT 0,
 	`current_participants` int DEFAULT 0,
 	`min_participants` int DEFAULT 3,
 	`paid_out` boolean DEFAULT false,
