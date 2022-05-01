@@ -61,9 +61,10 @@ session_start();
                             Admin Roles
                         </a>
                         <ul class="dropdown-menu bg-light" aria-labelledby="rolesDropdown">
-                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/create_role.php'); ?>">Create</a></li>
-                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/list_roles.php'); ?>">List</a></li>
-                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign</a></li>
+                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/create_role.php'); ?>">Create a Role</a></li>
+                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/list_roles.php'); ?>">List Roles</a></li>
+                            <li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign a Role</a></li>
+							<li><a class="dropdown-item text-primary" href="<?php echo get_url('admin/admin_calc.php'); ?>">Calculate Competition Winners</a></li>
                         </ul>
                     </li>
                 <?php endif; ?>
@@ -74,3 +75,4 @@ session_start();
         </div>
     </div>
 </nav>
+
