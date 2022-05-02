@@ -63,44 +63,51 @@
         - [https://amr93-prod.herokuapp.com/Project/home.php](https://amr93-prod.herokuapp.com/Project/home.php)
 
 - Milestone 3
-    - [x] (25/04/2022) Users will have credits associated with their account.
+    - [x] (04/25/2022) Users will have credits associated with their account.
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
-    - [x] (28/04/2022) Create a CreditsHistory table (id, user_id, credit_diff, reason, created)
+    - [x] (04/28/2022) Create a CreditsHistory table (id, user_id, credit_diff, reason, created)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
-    - [x] (29/04/2022) Competitions table should have the following columns (id, name, duration, expires (value = now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean default false), did_calc (boolean default false), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created_by (user_id ref), created, modified)
+    - [x] (04/29/2022) Competitions table should have the following columns (id, name, duration, expires (value = now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean default false), did_calc (boolean default false), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created_by (user_id ref), created, modified)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
         - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
         - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
-    - [x] (30/04/2022) User will be able to create a competition
+    - [x] (04/29/2022) User will be able to create a competition
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
-    - [x] (30/04/2022) Each new participant causes the Reward value to increase by 50% of the joining fee rounded up (i.e., at least 1)
+    - [x] (04/30/2022) Each new participant causes the Reward value to increase by 50% of the joining fee rounded up (i.e., at least 1)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
         - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
         - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
-    - [x] (01/05/2022) Have a page where the User can see active competitions (not expired)
+    - [x] (05/01/2022) Have a page where the User can see active competitions (not expired)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
-    - [x] (29/04/2022) Will need an association table CompetitionParticipants (id, comp_id, user_id, created, modified)
-        - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
-        - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
-        - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
-        - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
-    - [x] (01/05/2022) User can join active competitions 
+    - [x] (04/29/2022) Will need an association table CompetitionParticipants (id, comp_id, user_id, created, modified)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
         - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
         - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
-    - [x] (01/05/2022) Create function that calculates competition winners (clearly comment each step in the code)
+    - [x] (05/01/2022) User can join active competitions 
+        - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
+        - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
+        - [https://amr93-prod.herokuapp.com/Project/create_competition.php](https://amr93-prod.herokuapp.com/Project/create_competition.php)
+        - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
+    - [x] (05/01/2022) Create function that calculates competition winners (clearly comment each step in the code)
         - [Milestone3](https://github.com/amr93njit/IT202-002/blob/Milestone3/public_html/Project/milestone3.md)
         - [https://amr93-prod.herokuapp.com/Project/admin/admin_calc.php](https://amr93-prod.herokuapp.com/Project/admin/admin_calc.php)
     
 - Milestone 4
-  - (duplicate template here for Milestone 1 features) 
+    - [ ] (mm/dd/yyyy) User can set their profile to be public or private (will need another column in Users table)
+    - [ ] (mm/dd/yyyy) User will be able to see their competition history
+    - [ ] (mm/dd/yyyy) User with the role of “admin” can edit a competition where paid_out = false
+    - [ ] (mm/dd/yyyy) Add pagination to the Active Competitions view
+    - [ ] (mm/dd/yyyy) Anywhere a username is displayed should link to that user’s profile
+    - [ ] (mm/dd/yyyy) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
+    - [ ] (mm/dd/yyyy) Game should be fully implemented/completed by this point
+    - [ ] (mm/dd/yyyy) User’s score history will include pagination
 ### Intructions
 #### Don't delete this
 1. Pick one project type
