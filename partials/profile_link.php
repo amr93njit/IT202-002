@@ -7,4 +7,4 @@ if (!isset($username)) {
 }
 ?>
 <a href="<?php echo get_url("profile.php?id=");
-            se($user_id); ?>"><?php se($username); ?></a>
+ se($user_id); ?>"><?php se($username); ?></a>

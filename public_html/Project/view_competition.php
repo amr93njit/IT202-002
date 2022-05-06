@@ -12,7 +12,7 @@ if (isset($_POST["join"])) {
 $id = se($_GET, "id", -1, false);
 if ($id < 1) {
     flash("Invalid competition", "danger");
-    die(header("Location: $BASE_PATH" . "active_competitions.php"));
+    redirect("active_competitions.php");
 }
 
 $query = "SELECT Competitions.id, name, duration, expires, current_reward, starting_reward, join_fee, current_participants, 
@@ -71,11 +71,11 @@ try {
                     </tbody>
                 </table>
             <?php
-            //set title and duration for table in scores_tables.php. comp_id used to identify which comp table to call
-            $title = $comp . " Top Scores";
-            $comp_id = $id;
-            $duration = "competition";
-            include(__DIR__ . "/../../partials/scores_table.php");
+                //set title and duration for table in scores_tables.php. comp_id used to identify which comp table to call
+                $title = $comp . " Top Scores";
+                $comp_id = $id;
+                $duration = "competition";
+                include(__DIR__ . "/../../partials/scores_table.php");
             ?>
         </div>
     </div>
