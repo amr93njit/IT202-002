@@ -34,21 +34,6 @@ if (isset($_POST["save"]) && $isMe && $isEdit) {
         } catch (Exception $e) {
             users_check_duplicate($e->errorInfo);
         }
-        /*select fresh data from table
-        $stmt = $db->prepare("SELECT id, email, username from Users where id = :id LIMIT 1");
-        try {
-            $stmt->execute([":id" => get_user_id()]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($user) {
-                $_SESSION["user"]["email"] = $user["email"];
-                $_SESSION["user"]["username"] = $user["username"];
-            } else {
-                flash("User doesn't exist", "danger");
-            }
-        } catch (Exception $e) {
-            flash("An unexpected error occurred, please try again", "danger");
-            //echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
-        }*/
     }
 
     //check/update password
@@ -115,6 +100,7 @@ try {
     flash ("error", "danger");
 }
 
+give_credits(get_user_id(), 10000, "test+")
 ?>
 
 

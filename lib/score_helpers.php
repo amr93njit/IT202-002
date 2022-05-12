@@ -5,7 +5,7 @@
 function get_top_scores_for_comp($comp_id, $limit=10)
 {
     $db = getDB();
-    /* amr93 | 5/1/2022 
+    /*  amr93 | 5/1/2022 
         select entire scores table (score, user_id, time created) and use DENSE_RANK() to partition scores data into "ranks" and order by descending order.
         ranks identify the placement of the user, that is a user with the highest score has a rank of 1
 
@@ -50,7 +50,7 @@ function get_top_10($duration = "day")
         $d = $duration;
     }
     $db = getDB();
-    $query = "SELECT username, score, Scores.created from Scores join Users on Scores.user_id = Users.id";
+    $query = "SELECT user_id, username, score, Scores.created from Scores join Users on Scores.user_id = Users.id";
     if ($d === "day") {
         $query .= " WHERE Scores.created >= addtime(CURDATE(), '00:00:00') AND Scores.created <= addtime(CURDATE(), '23:59:59')";
     } else if ($d === "week") {
