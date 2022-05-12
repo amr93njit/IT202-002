@@ -1,5 +1,4 @@
 <?php
-//snippet from my functions.php
 function redirect($path)
 { //header headache
     //https://www.php.net/manual/en/function.headers-sent.php#90160
