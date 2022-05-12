@@ -100,7 +100,6 @@ try {
     flash ("error", "danger");
 }
 
-give_credits(get_user_id(), 10000, "test+")
 ?>
 
 
@@ -161,7 +160,8 @@ give_credits(get_user_id(), 10000, "test+")
         </form>
         <?php else : ?>
         <?php if ($isMe) : ?>
-            <a href="?edit">Edit Profile</a>
+            <h5> <a href="?edit">Edit Profile</a> </h5>
+            <h5> <a href=<?php echo get_url("competition_history.php"); ?>>View Competition History</a> </h5>
         <?php endif; ?>
         <?php if ($isVisible || $isMe) : ?>
             <div> 
