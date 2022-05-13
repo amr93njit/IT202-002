@@ -21,7 +21,6 @@ $query .= " ORDER BY expires ASC";
 
 $per_page = 10;
 paginate($total_query . $query, [], $per_page);
-
 $query .= " LIMIT :offset, :count";
 
 $stmt = $db->prepare($base_query . $query);
