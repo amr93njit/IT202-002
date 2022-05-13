@@ -102,29 +102,44 @@ function get_best_score($user_id)
     return 0;
 }
 
-function get_latest_scores($user_id, $limit = 10)
+function get_latest_scores($user_id)
 {
-    //I'm capping my limit to 1-50
-    if ($limit < 1 || $limit > 50) {
-        $limit = 10;
-    }
-    $query = "SELECT score created from Scores where user_id = :id ORDER BY created desc LIMIT :limit";
     $db = getDB();
-    //IMPORTANT: this is required for the execute to set the limit variables properly
-    //otherwise it'll convert the values to a string and the query will fail since LIMIT expects only numerical values and doesn't cast
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    //END IMPORTANT
-
-    $stmt = $db->prepare($query);
+    $base_query = "SELECT score, created FROM Scores WHERE user_id = :id"; 
+    $total_query = "SELECT count(1) AS total FROM Scores";
+    $query = " ORDER BY created DESC";
+    $stmt = $db->prepare($total_query . $query);
+    $total = 0;
     try {
-        $stmt->execute([":id" => $user_id, ":limit" => $limit]);
+        $stmt->execute();
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($r) {
-            return $r;
+            $total = (int)se($r, "total", 0, false);
         }
     } catch (PDOException $e) {
-        error_log("Error getting latest $limit scores for user $user_id: " . var_export($e->errorInfo, true));
+        flash("<pre>" . var_export($e, true) . "</pre>");
+    }
+    $page = se($_GET, "page", 1, false);
+    $per_page = 10; 
+    $offset = ($page - 1) * $per_page;
+    $query .= " LIMIT :offset, :count";
+    
+    $stmt = $db->prepare($base_query . $query);
+    $stmt->bindValue(":id", $user_id, PDO::PARAM_INT);
+    $stmt->bindValue(":offset", $offset, PDO::PARAM_INT);
+    $stmt->bindValue(":count", $per_page, PDO::PARAM_INT);
+
+    $results = [];
+    try {
+        $stmt->execute();
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $results = $r;
+        }
+    } catch (PDOException $e) {
+        error_log("Error getting latest scores for user $user_id: " . var_export($e->errorInfo, true));
         flash("Error getting latest scores", "danger");
     }
-    return [];
+    return $results;
 }
+?>
