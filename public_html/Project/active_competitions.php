@@ -76,6 +76,9 @@ try {
 										</form>
 									<?php endif; ?>
 									<a class="btn btn-secondary" href="view_competition.php?id=<?php se($row, 'id'); ?>">View</a>
+									<?php if (has_role("Admin")): ?>
+										<a class="btn btn-danger" href="/Project/admin/edit_competition.php?id=<?php se($row, 'id'); ?>">Edit </a>
+									<?php endif; ?>
 								</td>
 							</tr>
 						<?php endforeach; ?>
