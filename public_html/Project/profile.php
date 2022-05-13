@@ -41,38 +41,31 @@ if (isset($_POST["save"]) && $isMe && $isEdit) {
     $new_password = se($_POST, "newPassword", null, false);
     $confirm_password = se($_POST, "confirmPassword", null, false);
     if (!empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
-        $hasError = false;
-        if (!is_valid_password($password)) {
-            flash("Password too short", "danger");
-            $hasError = true;
-        }
-        if (!$hasError) {
-            if ($new_password === $confirm_password) {
-                //validate current
-                $stmt = $db->prepare("SELECT password from Users where id = :id");
-                try {
-                    $stmt->execute([":id" => get_user_id()]);
-                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                    if (isset($result["password"])) {
-                        if (password_verify($current_password, $result["password"])) {
-                            $query = "UPDATE Users set password = :password where id = :id";
-                            $stmt = $db->prepare($query);
-                            $stmt->execute([
-                                ":id" => get_user_id(),
-                                ":password" => password_hash($new_password, PASSWORD_BCRYPT)
-                            ]);
+        if ($new_password === $confirm_password) {
+            //TODO validate current
+            $stmt = $db->prepare("SELECT password from Users where id = :id");
+            try {
+                $stmt->execute([":id" => get_user_id()]);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                if (isset($result["password"])) {
+                    if (password_verify($current_password, $result["password"])) {
+                        $query = "UPDATE Users set password = :password where id = :id";
+                        $stmt = $db->prepare($query);
+                        $stmt->execute([
+                            ":id" => get_user_id(),
+                            ":password" => password_hash($new_password, PASSWORD_BCRYPT)
+                        ]);
 
-                            flash("Password reset", "success");
-                        } else {
-                            flash("Current password is invalid", "warning");
-                        }
+                        flash("Password reset", "success");
+                    } else {
+                        flash("Current password is invalid", "warning");
                     }
-                } catch (Exception $e) {
-                    echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
                 }
-            } else {
-                flash("New passwords don't match", "warning");
+            } catch (Exception $e) {
+                echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
             }
+        } else {
+            flash("New passwords don't match", "warning");
         }
     }
 }

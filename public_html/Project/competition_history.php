@@ -13,7 +13,7 @@ endif;
 $base_query = "SELECT Competitions.id, name, duration, expires, current_reward, starting_reward, join_fee, current_participants, 
 				min_participants, paid_out, did_calc, min_score, first_place_per, second_place_per, third_place_per, 
 				cost_to_create, created_by, IF(comp_id is null, 0, 1) AS joined FROM Competitions
-			   LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) AS cp ON cp.comp_id = Competitions.id";	   
+			   LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = get_user_id()) AS cp ON cp.comp_id = Competitions.id";	   
 $total_query = "SELECT count(1) AS total FROM Competitions";
 $query = " ORDER BY expires DESC";
 
@@ -23,7 +23,7 @@ paginate($total_query . $query, [], $per_page);
 $query .= " LIMIT :offset, :count";
 
 $stmt = $db->prepare($base_query . $query);
-$stmt->bindValue(":uid", get_user_id(), PDO::PARAM_INT);
+#$stmt->bindValue(":uid", get_user_id(), PDO::PARAM_INT);
 $stmt->bindValue(":offset", $offset, PDO::PARAM_INT);
 $stmt->bindValue(":count", $per_page, PDO::PARAM_INT);
 

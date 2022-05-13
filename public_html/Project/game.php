@@ -153,9 +153,9 @@ require(__DIR__ . "/../../partials/flash.php");
 			context.textAlign = 'center';
 			/* amr93 | 3/27/2022
 			   Adjusting game over screen to include "time elapsed" with score */
+			
 			context.fillText('Final Score: ' + score, canvas.width / 2, (canvas.height / 2) -15);
 			context.fillText('Time Elapsed (s): ' + timer, canvas.width / 2, (canvas.height / 2) +15);
-			
 			/* amr93 | 4/16/2022 
 			   Upon game completion, add scores to scores table. */
 			postData({
@@ -165,6 +165,8 @@ require(__DIR__ . "/../../partials/flash.php");
 				//quick, brief example (you wouldn't want to use alert)
 				if (data.status === 200) {
 					//saved successfully
+					<?php give_credits(get_user_id(), 1, "Earned from playing the game"); 
+						flash("Earned a credit from playing the game.");?>
 					flash(data.message);
 				} else {
 					//some error occurred, maybe want to handle it before resetting
