@@ -3,8 +3,8 @@
 require(__DIR__ . "/../../../partials/nav.php");
 
 if (!has_role("Admin")) {
-    flash("You don't have permission to view this page", "warning");
-    die(header("Location: $BASE_PATH" . "home.php"));
+    flash("You do not have permission to view this page", "warning");
+    redirect("home.php");
 }
 calc_winners();
 require(__DIR__ . "/../../../partials/flash.php");
