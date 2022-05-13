@@ -35,7 +35,6 @@ if (isset($_POST["name"])) {
     $duration = (int)se($_POST, "duration", 1, false);
 	$current_reward = (int)se($_POST, "current_reward", 1, false);
     $join_fee = (int)se($_POST, "join_fee", 0, false);
-    $current_participants = (int)se($_POST, "current_participants", 0, false);
     $min_participants = (int)se($_POST, "min_participants", 3, false);
     $min_score = (int)se($_POST, "min_score", 1, false);
     $first_place_per = (int)se($_POST, "first", 60, false);
@@ -71,7 +70,7 @@ if (isset($_POST["name"])) {
     if ($isValid) {
         $db = getDB();
         $query = "UPDATE Competitions SET
-					name = $name,
+					Competitions.name = $name,
 					duration = $duration,
 					expires = DATE_ADD(NOW(), INTERVAL $duration day),
 					current_reward = $current_reward,
@@ -106,7 +105,7 @@ if (isset($_POST["name"])) {
 		<!-- first -->
 		<div class="col"> 
 			<label for="first" class="form-label">First Place % Winnings</label>
-			<input id="first" name="first" class="form-control form-inline" type="number" min="0" />
+			<input id="first" name="first" class="form-control form-inline" type="number" min="0" placeholder="10"/>
 		</div>
 		<!-- second -->
 		<div class="col"> 
