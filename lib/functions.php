@@ -23,6 +23,7 @@ require(__DIR__ . "/duplicate_user_details.php");
 //reset session
 require(__DIR__ . "/reset_session.php");
 
+//get url
 require(__DIR__ . "/get_url.php");
 
 //score
@@ -33,4 +34,10 @@ require(__DIR__ . "/credit_helpers.php");
 
 //competitions
 require(__DIR__ . "/competition_helpers.php");
+
+//redirect
+require(__DIR__ . "/redirect.php");
+
+//paginate
+require(__DIR__ . "/paginate.php");
 ?>
