@@ -234,6 +234,7 @@ try {
                             </div>
                         </div>
                     </div>
+                    <?php if ($isVisible || $isMe): require(__DIR__ . "/../../partials/pagination.php"); endif;?>
             </div>
             <?php if ($isMe && !$isVisible) : ?>
                 <h4> <strong> This page is private and is only visible to you. </strong> <h4> 
@@ -268,5 +269,5 @@ try {
 </script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");
-require(__DIR__ . "/../../partials/pagination.php");
+
 ?>

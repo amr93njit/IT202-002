@@ -100,14 +100,31 @@
         - [https://amr93-prod.herokuapp.com/Project/admin/admin_calc.php](https://amr93-prod.herokuapp.com/Project/admin/admin_calc.php)
     
 - Milestone 4
-    - [ ] (mm/dd/yyyy) User can set their profile to be public or private (will need another column in Users table)
-    - [ ] (mm/dd/yyyy) User will be able to see their competition history
-    - [ ] (mm/dd/yyyy) User with the role of “admin” can edit a competition where paid_out = false
-    - [ ] (mm/dd/yyyy) Add pagination to the Active Competitions view
-    - [ ] (mm/dd/yyyy) Anywhere a username is displayed should link to that user’s profile
-    - [ ] (mm/dd/yyyy) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
-    - [ ] (mm/dd/yyyy) Game should be fully implemented/completed by this point
-    - [ ] (mm/dd/yyyy) User’s score history will include pagination
+    - [x] (05/05/2022) User can set their profile to be public or private (will need another column in Users table)
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
+    - [x] (05/12/2022) User will be able to see their competition history
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/competition_history.php](https://amr93-prod.herokuapp.com/Project/competition_history.php
+    - [x] (05/12/2022) User with the role of “admin” can edit a competition where paid_out = false
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/admin/edit_competition.php](https://amr93-prod.herokuapp.com/Project/admin/edit_competition.php)
+    - [x] (05/12/2022) Add pagination to the Active Competitions view
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
+    - [x] (05/12/2022) Anywhere a username is displayed should link to that user’s profile
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/active_competitions.php](https://amr93-prod.herokuapp.com/Project/active_competitions.php)
+        - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
+    - [x] (05/12/2022) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/view_competition.php](https://amr93-prod.herokuapp.com/Project/view_competition.php)
+    - [x] (05/12/2022) Game should be fully implemented/completed by this point
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/game.php](https://amr93-prod.herokuapp.com/Project/game.php)
+    - [x] (05/12/2022) User’s score history will include pagination
+        - [Milestone4](https://github.com/amr93njit/IT202-002/blob/Milestone4/public_html/Project/milestone4.md)
+        - [https://amr93-prod.herokuapp.com/Project/profile.php](https://amr93-prod.herokuapp.com/Project/profile.php)
 ### Intructions
 #### Don't delete this
 1. Pick one project type

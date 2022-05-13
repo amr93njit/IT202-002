@@ -44,8 +44,10 @@ if (isset($_POST["name"])) {
 	
 	$isValid = true;
     //validate
-    $balance = get_credits(get_user_id());
-    //if (empty($name)) {
+    if (!!$name === false) {
+        flash("Competition must have a title", "warning");
+        $isValid = false;
+    }
     if ($first_place_per + $second_place_per + $third_place_per != 100) {
         flash("First/second/third place earnings must total to 100%", "warning");
         $isValid = false;
