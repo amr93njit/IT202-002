@@ -179,10 +179,61 @@ try {
             </div>
             <div>
                 <?php
-                $duration = "latest";
+                /*$duration = "latest";
                 //Note: $user_id will be defined prior to this require() so should use whatever is set at the top
-                require(__DIR__ . "/../../partials/scores_table.php");
-                ?>
+                /require(__DIR__ . "/../../partials/scores_table.php");
+                I couldn't get it to work in partials so it's being done entirely over here now :( */
+                    $db = getDB();
+                    $base_query = "SELECT score, created FROM Scores WHERE user_id = :id"; 
+                    $total_query = "SELECT count(1) AS total FROM Scores";
+                    $query = " ORDER BY created DESC";
+                    $stmt = $db->prepare($total_query . $query);
+                    $per_page = 10; 
+                    paginate($total_query . $query, [], $per_page);
+                    $query .= " LIMIT :offset, :count";
+                    $stmt = $db->prepare($base_query . $query);
+                    $stmt->bindValue(":id", $user_id, PDO::PARAM_INT);
+                    $stmt->bindValue(":offset", $offset, PDO::PARAM_INT);
+                    $stmt->bindValue(":count", $per_page, PDO::PARAM_INT);
+                    $results = [];
+                    try {
+                        $stmt->execute();
+                        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        if ($r) {
+                            $results = $r;
+                        }
+                    } catch (PDOException $e) {
+                        error_log("Error getting latest scores for user $user_id: " . var_export($e->errorInfo, true));
+                        flash("Error getting latest scores", "danger");
+                    }
+                    ?>
+                    <div class = "container-fluid">
+                        <div class= "card bg-transparent border-primary">
+                            <div class="card-text">
+                                <h1 class="card-header mb-3" style = "background-color:#319e9e;"> Latest Scores</h1>
+                                <?php if (count($results) > 0) : ?>
+                                    <table class="table border-secondary mb-3">
+                                        <thead>
+                                            <tr>
+                                                <th> Score </th>
+                                                <th> Created </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($results as $row) : ?>
+                                                <tr>
+                                                    <td><?php se($row, "score"); ?></td>
+                                                    <td><?php se($row, "created"); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                <?php else : ?>
+                                    <p>This user has no scores to display.</p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <?php if ($isMe && !$isVisible) : ?>
                 <h4> <strong> This page is private and is only visible to you. </strong> <h4> 
@@ -217,4 +268,5 @@ try {
 </script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");
+require(__DIR__ . "/../../partials/pagination.php");
 ?>
